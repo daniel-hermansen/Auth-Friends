@@ -1,22 +1,43 @@
 .App {
   text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+body {
+  background-color: wheat;
 }
 
 .App-logo {
   height: 40vmin;
+  pointer-events: none;
+}
+.link{
+  position: absolute;;
+  top: 20%;
+  right: 30%;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.Nav{
+display: flex;
+text-decoration: none;
+position: relative;
+left: 10px;
+}
+h4{
+  position: relative;
+left: 40%;
+
+}
+h2{
+  margin: 10px;
+  text-decoration: wavy;
   color: white;
-}
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 
-.App-link {
-  color: #09d3ac;
+
 }

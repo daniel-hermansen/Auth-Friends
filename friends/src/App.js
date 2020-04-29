@@ -1,31 +1,44 @@
+
 import React from 'react';
-import './App.css';
-import Login from "./components/Login";
-import FriendsList from "./components/FriendsList";
-import PrivateRoute from "./components/PrivateRoute"; 
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import"./App.css"
+import Login from './components/Login';
+import FriendsList from './components/FriendsList';
+import PrivateRoute from './components/PrivateRoute';
+import AddFriend from './components/AddFriend';
+import DeleteFriend from './components/DeleteFriend';
 
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+class App extends React.Component {
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <ul>
-          <li>
-            <Link to ="/login">Login</Link>
-          </li>
-          <li>
-            <Link to ="/friendsList">Friends</Link>
-          </li>
-        </ul>
-        <Switch>
-          <Route exact path="/friendsList" component={FriendsList} />
-          <Route path="/login" component={Login} />
-          <Route component={Login} />
-        </Switch>
-      </div>
-    </Router>
-  );
+    constructor() {
+        super();
+        this.state = { credentials: {} }
+    }
+
+    render() {
+        return (
+            <div className="Container">
+                <Router>
+                    <div className="Nav">
+                        <Link to='/'><h2>Home</h2></Link>
+                        <Link to='/login'><h2>Login</h2></Link>
+                        <Link to='/friends-list'><h2>View Friends</h2></Link>    
+                        <Link to='/add-friend'><h2>Add Friend</h2></Link>    
+                        <Link to='/delete-friend'><h2>Delete Friend</h2></Link>    
+                    </div>
+
+                    <Switch>
+                        <Route path="/login" component={Login} />
+                        <PrivateRoute exact path='/friends-list' component={FriendsList} />
+                        <PrivateRoute exact path='/add-friend' component={AddFriend} />
+                        <PrivateRoute exact path='/delete-friend' component={DeleteFriend} />
+                    </Switch>
+
+                </Router>
+            </div>
+        )
+    }
+
 }
 
 export default App;
