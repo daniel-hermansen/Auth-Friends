@@ -1,6 +1,8 @@
 
 import React from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
+import AddFriend from './AddFriend';
+import DeleteFriend from './DeleteFriend';
 
 class FriendsList extends React.Component{
 
@@ -38,6 +40,10 @@ class FriendsList extends React.Component{
                             <h5>{`ID: ${friend.id}`}</h5>
                         </div>)
                     }
+                </div>
+                <div className="forms">
+                    <AddFriend/>
+                    <DeleteFriend/>
                 </div>
             </div>
         )

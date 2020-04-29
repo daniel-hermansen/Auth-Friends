@@ -5,21 +5,21 @@ class DeleteFriend extends React.Component{
 
     constructor(){
         super();
-        this.state = { id: '', deletedFriend: '' }
+        this.state = { id: '' }
     }
 
     submitHandler = (event) => {
-        event.preventDefault();
         axiosWithAuth().delete(`/api/friends/${this.state.id}`)
         .then(res => {
             console.log(res)
-            alert(`Deleted friend with id of: ${this.state.id}`);
+            alert('Friend deleted')
         })
         .catch(err => console.log(err))
+        this.setState({ id: '' })
     }
 
     changeHandler = (event) => {
-        this.setState( { id: event.target.value})
+        this.setState( { ...this.state.id, [event.target.name]: event.target.value})
         console.log(this.state.id)
     }
 
@@ -29,7 +29,7 @@ class DeleteFriend extends React.Component{
             <div className="DeleteFriend">
                 <h2>Delete Friend :(</h2>
                 <form onSubmit={this.submitHandler}>
-                    <input onChange={this.changeHandler} placeholder="Enter an id"/>
+                    <input onChange={this.changeHandler} placeholder="Enter an id" name="id" value={this.state.id}/>
                     <button>Delete Friend</button>
                 </form>
             </div>

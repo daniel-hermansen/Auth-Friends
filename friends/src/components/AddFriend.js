@@ -9,13 +9,14 @@ class AddFriend extends React.Component{
     }
 
     submitHandler = (event) => {
-        event.preventDefault();
         axiosWithAuth()
         .post("/api/friends", this.state.friend)
         .then(res => {
             console.log(res)
+            alert("Friend Added")
         })
         .catch(err => console.log(err))
+        this.setState({friend: {name: '', age: '', email: '' }})
     }
 
     changeHandler = (event) => {
@@ -28,9 +29,9 @@ class AddFriend extends React.Component{
             <div className="AddFriend">
                 <h2>Add Friend</h2>
                 <form onSubmit={this.submitHandler}>
-                    <input onChange={this.changeHandler} placeholder="Name" name="name" />
-                    <input onChange={this.changeHandler} placeholder="Age" name="age" />
-                    <input onChange={this.changeHandler} placeholder="Email" name="email" />
+                    <input onChange={this.changeHandler} placeholder="Name" name="name" value={this.state.friend.name}/>
+                    <input onChange={this.changeHandler} placeholder="Age" name="age" value={this.state.friend.age}/>
+                    <input onChange={this.changeHandler} placeholder="Email" name="email" value={this.state.friend.email}/>
                     <button>Add Friend</button>
                 </form>
             </div>

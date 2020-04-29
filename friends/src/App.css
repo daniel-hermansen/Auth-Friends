@@ -6,6 +6,7 @@
 
 body {
   background-color: rgb(255, 255, 255);
+  margin-bottom: 2.5%;
 }
 
 .link{
@@ -34,4 +35,11 @@ position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.forms {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 5%;
+  margin-right: 10%;
 }
