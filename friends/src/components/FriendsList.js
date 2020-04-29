@@ -30,13 +30,12 @@ class FriendsList extends React.Component{
     render(){
         return(
             <div className="FriendsList">
-                <h2>Friend List</h2>
                 {this.state.isLoading && <p> Loading...  </p>}
                 <div className="ListOfFriends">
                     {this.state.friends.map(friend => 
                         <div key={friend.id}>
-                            <h4>{`ID: ${friend.id}`}</h4>
                             <h4>{`${friend.name}, ${friend.age} years old`}</h4>
+                            <h5>{`ID: ${friend.id}`}</h5>
                         </div>)
                     }
                 </div>

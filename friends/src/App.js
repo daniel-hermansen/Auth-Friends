@@ -17,25 +17,26 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="Container">
-                <Router>
-                    <div className="Nav">
-                        <Link to='/'><h2>Home</h2></Link>
-                        <Link to='/login'><h2>Login</h2></Link>
-                        <Link to='/friends-list'><h2>View Friends</h2></Link>    
-                        <Link to='/add-friend'><h2>Add Friend</h2></Link>    
-                        <Link to='/delete-friend'><h2>Delete Friend</h2></Link>    
-                    </div>
 
-                    <Switch>
-                        <Route path="/login" component={Login} />
-                        <PrivateRoute exact path='/friends-list' component={FriendsList} />
-                        <PrivateRoute exact path='/add-friend' component={AddFriend} />
-                        <PrivateRoute exact path='/delete-friend' component={DeleteFriend} />
-                    </Switch>
+          <Router>
+              <div className="Nav">
+                  <Link to='/' className= 'link'><h2>Home</h2></Link>
+                  <Link to='/login' className= 'link'><h2>Login</h2></Link>
+                  <Link to='/friends-list' className= 'link'><h2>View Friends</h2></Link>    
+                  <Link to='/add-friend' className= 'link'><h2>Add Friend</h2></Link>    
+                  <Link to='/delete-friend' className= 'link'><h2>Delete Friend</h2></Link>    
+              </div>
+              <div className="Container">
+                <h1>List of Friends</h1>
+                <Switch>
+                    <Route path="/login" component={Login} />
+                    <PrivateRoute exact path='/friends-list' component={FriendsList} />
+                    <PrivateRoute exact path='/add-friend' component={AddFriend} />
+                    <PrivateRoute exact path='/delete-friend' component={DeleteFriend} />
+                </Switch>
+              </div>
+          </Router>
 
-                </Router>
-            </div>
         )
     }
 

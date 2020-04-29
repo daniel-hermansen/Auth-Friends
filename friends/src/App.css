@@ -1,43 +1,37 @@
-.App {
+.Container {
   text-align: center;
   margin-left: 5%;
   margin-right: 5%;
 }
 
 body {
-  background-color: wheat;
+  background-color: rgb(255, 255, 255);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 .link{
-  position: absolute;;
-  top: 20%;
-  right: 30%;
-
+  text-decoration: none;
 }
 
 .Nav{
 display: flex;
+background-color: #adaeb9;
 text-decoration: none;
 position: relative;
-left: 10px;
 }
-h4{
-  position: relative;
-left: 40%;
 
-}
-h2{
+.Nav h2{
   margin: 10px;
-  text-decoration: wavy;
-  color: white;
+  color: rgba(17, 58, 243, 0.863);
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  text-decoration: none;
+}
 
-
+.ListOfFriends {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
