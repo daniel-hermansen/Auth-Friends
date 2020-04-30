@@ -20,7 +20,8 @@ class App extends React.Component {
           <Router>
               <div className="Nav">
                   <Link to='/login' className= 'link'><h2>Login</h2></Link>
-                  <Link to='/protected' className= 'link'><h2>View Friends</h2></Link>     
+                  <Link to='/protected' className= 'link'><h2>My Friends</h2></Link>  
+                  <Link to='/login' className= 'link' onClick={() => localStorage.removeItem('token')}><h2>Logout</h2></Link>   
               </div>
               <div className="Container">
                 <h1>Friend Zone </h1>
