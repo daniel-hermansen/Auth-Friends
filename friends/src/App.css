@@ -1,0 +1,45 @@
+.Container {
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 2.5%;
+}
+
+.link{
+  text-decoration: none;
+}
+
+.Nav{
+display: flex;
+background-color: #adaeb9;
+text-decoration: none;
+position: relative;
+}
+
+.Nav h2{
+  margin: 10px;
+  color: rgba(17, 58, 243, 0.863);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+.ListOfFriends {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.forms {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 5%;
+  margin-right: 10%;
+}
